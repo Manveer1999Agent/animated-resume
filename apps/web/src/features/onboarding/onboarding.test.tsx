@@ -147,6 +147,7 @@ describe("onboarding shell", () => {
     expect(screen.getByRole("link", { name: "Back" })).toBeTruthy();
     expect(screen.getByRole("button", { name: "Continue" })).toBeTruthy();
     expect(screen.getByText("Child content")).toBeTruthy();
+    expect(document.querySelectorAll(".background-component")).toHaveLength(2);
   });
 
   test("lets the user move from welcome to source selection and manual start", async () => {

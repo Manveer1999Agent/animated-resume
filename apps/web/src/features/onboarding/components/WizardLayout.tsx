@@ -1,6 +1,9 @@
 import { type PropsWithChildren, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 
+import { Component as WarmGlowBackground } from "../../../components/ui/background-components";
+import { Component as SkyGlowBackground } from "../../../components/ui/demo";
+
 type WizardLayoutProps = PropsWithChildren<{
   title: string;
   description: string;
@@ -25,6 +28,8 @@ export function WizardLayout({
 
   return (
     <section className="wizard-shell">
+      <WarmGlowBackground className="wizard-background-layer wizard-background-layer-warm" />
+      <SkyGlowBackground className="wizard-background-layer wizard-background-layer-cool" />
       <div className="wizard-frame">
         <header className="wizard-header">
           <div className="wizard-copy">
