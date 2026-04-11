@@ -1,0 +1,13 @@
+{
+  "name": "@animated-resume/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w -p tsconfig.json --noEmit false --outDir dist --preserveWatchOutput",
+    "build": "tsc -p tsconfig.json --noEmit false --outDir dist",
+    "test": "node -e \"console.log('No tests defined for @animated-resume/api yet')\"",
+    "lint": "tsc -p tsconfig.json --pretty false",
+    "typecheck": "tsc -p tsconfig.json --pretty false"
+  }
+}

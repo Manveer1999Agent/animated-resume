@@ -1,0 +1,16 @@
+{
+  "name": "@animated-resume/config-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "base.json"
+  ],
+  "scripts": {
+    "build": "mkdir -p dist && cp base.json dist/base.json",
+    "dev": "node -e \"console.log('No dev server for @animated-resume/config-typescript')\"",
+    "test": "node -e \"console.log('No tests defined for @animated-resume/config-typescript yet')\"",
+    "lint": "node -e \"console.log('Config package lint placeholder')\"",
+    "typecheck": "node -e \"console.log('Config package has no TypeScript sources yet')\""
+  }
+}

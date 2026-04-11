@@ -2,19 +2,17 @@
 .superpowers/
 AGENTS.md
 .codex/
+.obsidian/
 
-/node_modules
+# Package managers
+node_modules/
+.pnpm-store/
 
-# Claude Flow runtime data
-.claude-flow/data/
-.claude-flow/logs/
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-/node_modules
+# Build and cache output
+.turbo/
+dist/
+coverage/
+*.tsbuildinfo
 
 # Claude Flow runtime data
 .claude-flow/data/

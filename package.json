@@ -1,9 +1,20 @@
 {
   "name": "animated-resume",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "dependencies": {
-    "@claude-flow/codex": "^3.0.0-alpha.9",
-    "framer-motion": "^12.38.0"
+  "packageManager": "pnpm@10.6.2",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.3"
   }
 }
