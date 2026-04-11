@@ -11,6 +11,7 @@
     "typecheck": "tsc -p tsconfig.json --pretty false"
   },
   "dependencies": {
+    "@animated-resume/contracts": "workspace:*",
     "@animated-resume/ui": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

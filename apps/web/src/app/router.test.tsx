@@ -43,4 +43,18 @@ describe("app routing", () => {
 
     expect(await screen.findByRole("heading", { name: "Dashboard" })).toBeTruthy();
   });
+
+  test("renders onboarding welcome for authenticated onboarding route", async () => {
+    const router = createAppRouter({
+      isAuthenticated: true,
+      initialEntries: ["/app/onboarding/welcome"],
+    });
+
+    render(<RouterProvider router={router} />);
+
+    expect(
+      await screen.findByRole("heading", { name: "Build your first animated resume" }),
+    ).toBeTruthy();
+    expect(screen.queryByRole("heading", { name: "Workspace" })).toBeNull();
+  });
 });
