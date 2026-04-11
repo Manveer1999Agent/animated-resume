@@ -7,6 +7,7 @@ const envSchema = z.object({
   SUPABASE_URL: z.string().url().default("http://127.0.0.1:54321"),
   SUPABASE_ANON_KEY: z.string().min(1).default("dev-anon-key"),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).default("dev-service-role-key"),
+  GEMINI_API_KEY: z.string().min(1).optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;

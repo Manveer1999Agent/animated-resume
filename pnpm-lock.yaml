@@ -17,6 +17,9 @@ importers:
 
   apps/api:
     dependencies:
+      '@animated-resume/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
       '@supabase/supabase-js':
         specifier: ^2.49.1
         version: 2.103.0
@@ -87,6 +90,12 @@ importers:
         version: 3.2.4(@types/node@22.19.17)(jsdom@26.1.0)(tsx@4.21.0)
 
   packages/config-typescript: {}
+
+  packages/contracts:
+    dependencies:
+      zod:
+        specifier: ^3.24.2
+        version: 3.25.76
 
   packages/ui: {}
 

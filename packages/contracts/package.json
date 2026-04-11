@@ -1,0 +1,25 @@
+{
+  "name": "@animated-resume/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json --pretty false --noEmit false --outDir dist",
+    "dev": "node -e \"console.log('No dev server for @animated-resume/contracts')\"",
+    "test": "node -e \"console.log('No tests defined for @animated-resume/contracts yet')\"",
+    "lint": "tsc -p tsconfig.json --pretty false --noEmit",
+    "typecheck": "tsc -p tsconfig.json --pretty false"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  }
+}
