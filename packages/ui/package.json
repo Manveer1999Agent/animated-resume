@@ -1,0 +1,17 @@
+{
+  "name": "@animated-resume/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./src/tokens.css"
+  },
+  "scripts": {
+    "dev": "node -e \"console.log('No dev server for @animated-resume/ui')\"",
+    "build": "mkdir -p dist && cp src/tokens.css dist/tokens.css && cp src/index.ts dist/index.ts",
+    "test": "node -e \"console.log('No tests defined for @animated-resume/ui yet')\"",
+    "lint": "node -e \"console.log('UI package lint placeholder')\"",
+    "typecheck": "node -e \"console.log('UI package has no TypeScript sources requiring typecheck yet')\""
+  }
+}

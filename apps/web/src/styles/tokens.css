@@ -1,0 +1,77 @@
+@import "@animated-resume/ui/tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 5% 0%, #eef3fb 0%, transparent 40%),
+    radial-gradient(circle at 95% 10%, #f0f7ff 0%, transparent 35%),
+    var(--ar-color-bg-page);
+  color: var(--ar-color-text-primary);
+  font-family: var(--ar-font-family-base);
+}
+
+a {
+  color: var(--ar-color-accent);
+}
+
+.marketing-shell,
+.product-shell {
+  min-height: 100vh;
+}
+
+.marketing-shell {
+  padding: var(--ar-space-6);
+}
+
+.product-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+
+.product-sidebar {
+  background: var(--ar-color-bg-surface);
+  border-right: 1px solid var(--ar-color-border);
+  padding: var(--ar-space-5);
+}
+
+.shell-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--ar-space-6);
+}
+
+.shell-nav {
+  display: flex;
+  gap: var(--ar-space-4);
+}
+
+.shell-main {
+  padding: var(--ar-space-5);
+}
+
+.panel {
+  background: var(--ar-color-bg-surface);
+  border: 1px solid var(--ar-color-border);
+  border-radius: var(--ar-radius-md);
+  box-shadow: var(--ar-shadow-soft);
+  max-width: 680px;
+  padding: var(--ar-space-5);
+}
+
+h1 {
+  font-family: var(--ar-font-family-heading);
+  margin-top: 0;
+}

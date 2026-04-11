@@ -1,0 +1,26 @@
+:root {
+  --ar-color-bg-page: #f6f7f9;
+  --ar-color-bg-surface: #ffffff;
+  --ar-color-bg-panel: #f1f3f7;
+  --ar-color-text-primary: #1f2937;
+  --ar-color-text-muted: #5b6472;
+  --ar-color-accent: #1d6fd7;
+  --ar-color-accent-soft: #dce9fb;
+  --ar-color-border: #d7deea;
+
+  --ar-font-family-base: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  --ar-font-family-heading: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+
+  --ar-radius-sm: 8px;
+  --ar-radius-md: 14px;
+  --ar-radius-lg: 20px;
+
+  --ar-space-1: 0.25rem;
+  --ar-space-2: 0.5rem;
+  --ar-space-3: 0.75rem;
+  --ar-space-4: 1rem;
+  --ar-space-5: 1.5rem;
+  --ar-space-6: 2rem;
+
+  --ar-shadow-soft: 0 12px 30px rgba(23, 35, 56, 0.08);
+}

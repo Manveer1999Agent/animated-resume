@@ -4,10 +4,26 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsc -w -p tsconfig.json --noEmit false --outDir dist --preserveWatchOutput",
-    "build": "tsc -p tsconfig.json --noEmit false --outDir dist",
-    "test": "node -e \"console.log('No tests defined for @animated-resume/web yet')\"",
-    "lint": "tsc -p tsconfig.json --pretty false",
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "test": "vitest run --environment jsdom --passWithNoTests=false",
+    "lint": "tsc -p tsconfig.json --pretty false --noEmit",
     "typecheck": "tsc -p tsconfig.json --pretty false"
+  },
+  "dependencies": {
+    "@animated-resume/ui": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10",
+    "vitest": "^3.2.4"
   }
 }
