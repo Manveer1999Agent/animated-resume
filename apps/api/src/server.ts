@@ -2,12 +2,15 @@ import express, { type Express, type NextFunction, type Request, type Response }
 
 import type { Env } from "./lib/env.js";
 import type { Logger } from "./lib/logger.js";
+import { createSupabaseAuthRepository, type AuthRepository } from "./lib/supabase.js";
+import { createAuthRouter } from "./routes/auth.js";
 import { createHealthRouter } from "./routes/health.js";
 
 type AppContext = {
   env: Env;
   logger: Logger;
   startedAt?: number;
+  authRepository?: AuthRepository;
 };
 
 type ServerContext = {
@@ -20,6 +23,7 @@ export function createApp(context: AppContext): Express {
   const app = express();
   const startedAt = context.startedAt ?? Date.now();
   const requestLogger = context.logger.child({ scope: "http" });
+  const authRepository = context.authRepository ?? createSupabaseAuthRepository(context.env);
 
   app.use(express.json({ limit: "1mb" }));
 
@@ -35,6 +39,7 @@ export function createApp(context: AppContext): Express {
       startedAt,
     }),
   );
+  app.use(createAuthRouter({ authRepository, logger: context.logger }));
 
   app.use((_req: Request, res: Response) => {
     res.status(404).json({ error: "Not Found" });
