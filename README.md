@@ -83,3 +83,6 @@ Implementation should follow the documentation in this order:
 - phase plans define execution order
 
 If any plan conflicts with the spec or architecture, update the plan instead of drifting the product direction.
+
+UI/UX Pilot Design:
+https://uxpilot.ai/s/0645feb75ab795393cef7db0bb903aea
