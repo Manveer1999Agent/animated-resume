@@ -1,0 +1,9 @@
+{
+  "name": "animated-resume",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "@claude-flow/codex": "^3.0.0-alpha.9",
+    "framer-motion": "^12.38.0"
+  }
+}
