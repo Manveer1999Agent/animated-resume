@@ -78,6 +78,9 @@ h1 {
 
 .wizard-shell {
   align-items: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 248, 253, 0.98)),
+    var(--ar-color-bg-page);
   display: flex;
   justify-content: center;
   min-height: 100dvh;
@@ -107,17 +110,18 @@ h1 {
 }
 
 .background-component__glow {
-  inset: 0;
+  filter: blur(78px);
+  inset: -24%;
   position: absolute;
-  transform: scale(1.2);
+  transform: scale(1.08);
 }
 
 .wizard-background-layer-warm .background-component__glow {
-  transform: translate(-14%, 8%) scale(1.3);
+  transform: translate(-18%, 14%) scale(1.34);
 }
 
 .wizard-background-layer-cool .background-component__glow {
-  transform: translate(24%, -18%) scale(1.12);
+  transform: translate(20%, -8%) scale(1.24);
 }
 
 .wizard-header {

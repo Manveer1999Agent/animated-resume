@@ -2,7 +2,7 @@ type BackgroundComponentProps = {
   className?: string;
   glowColor?: string;
   opacity?: number;
-  blendMode?: "multiply" | "screen" | "overlay" | "soft-light";
+  blendMode?: "multiply" | "screen" | "overlay" | "soft-light" | "normal";
 };
 
 function joinClasses(...classNames: Array<string | undefined>): string {
@@ -11,9 +11,9 @@ function joinClasses(...classNames: Array<string | undefined>): string {
 
 export const Component = ({
   className,
-  glowColor = "#FFF991",
-  opacity = 0.6,
-  blendMode = "multiply",
+  glowColor = "rgba(255, 241, 130, 0.92)",
+  opacity = 0.42,
+  blendMode = "normal",
 }: BackgroundComponentProps) => {
   return (
     <div
@@ -23,7 +23,7 @@ export const Component = ({
       <div
         className="background-component__glow"
         style={{
-          backgroundImage: `radial-gradient(circle at center, ${glowColor} 0%, transparent 70%)`,
+          backgroundImage: `radial-gradient(circle at center, ${glowColor} 0%, transparent 72%)`,
           opacity,
           mixBlendMode: blendMode,
         }}

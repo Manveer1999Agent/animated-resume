@@ -8,9 +8,9 @@ export const Component = ({ className }: DemoProps) => {
   return (
     <BackgroundComponent
       className={className}
-      glowColor="#93c5fd"
-      opacity={0.48}
-      blendMode="screen"
+      glowColor="rgba(147, 197, 253, 0.88)"
+      opacity={0.3}
+      blendMode="soft-light"
     />
   );
 };
