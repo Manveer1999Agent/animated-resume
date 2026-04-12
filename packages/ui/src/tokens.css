@@ -24,3 +24,15 @@
 
   --ar-shadow-soft: 0 12px 30px rgba(23, 35, 56, 0.08);
 }
+
+:root.dark {
+  --ar-color-bg-page: #0f172a;
+  --ar-color-bg-surface: #1e293b;
+  --ar-color-bg-panel: #1e293b;
+  --ar-color-text-primary: #f8fafc;
+  --ar-color-text-muted: #94a3b8;
+  --ar-color-accent: #3b82f6;
+  --ar-color-accent-soft: rgba(59, 130, 246, 0.2);
+  --ar-color-border: #334155;
+  --ar-shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
