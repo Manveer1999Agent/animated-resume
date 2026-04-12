@@ -14,11 +14,20 @@ The authenticated product and marketing site should follow one coherent shell la
 
 ### Product shell
 
-- Editorial, structured, warm-neutral baseline
-- High readability, clear hierarchy, generous whitespace
-- Selective gradient accents only on marketing surfaces and upgrade moments
-- Card-based layout with disciplined radius and restrained shadows
-- Premium sans-led typography with strong headline contrast
+- **Typography & Text Usage**: 
+  - **Fonts**: Use `var(--ar-font-family-base)` for core body text and `var(--ar-font-family-heading)` for headers.
+  - **Grades**: Standard text should rely on `--ar-color-text-primary`. For secondary or descriptive subtext, use `--ar-color-text-muted`.
+  - **Accents**: Apply `--ar-gradient-primary` with `-webkit-background-clip: text` to specific headline spans for premium emphasis.
+  - **Sizes**: Emphasize hierarchy over boldness. Desktop headings start around `2.5rem` to `3rem`, reducing smoothly to `2rem` on mobiles.
+- **Component Wrappers & Layout Extents**: 
+  - **Outer Shells**: Application wide shells should use soft height bounds like `min-height: calc(100vh - 60px)` to prevent hard overflow.
+  - **Main Containers**: Major layout blocks should be bounded with a generous corner radius (`--ar-radius-xl` defaults to `24px` and `--ar-radius-2xl` scales to `32px` on desktops). 
+  - **Layout Panels**: Backgrounds switch smoothly depending on hierarchy: base backdrop is `--ar-color-bg-page`, card surfaces run on `--ar-color-bg-surface`, and deep structural panels use `--ar-color-bg-panel`.
+- **Light & Dark Theme Schemes**: 
+  - **Implementation**: Avoid hard-coding HEX/RGB colors in components. Always map styles to semantic variables in `tokens.css` (e.g., `var(--ar-color-bg-surface)`).
+  - **Dark Mode Strategy**: The system exposes `.dark` scopes. Wrappers like `MarketingShell` manage the toggle state by dynamically injecting the `.dark` class directly into the `document.documentElement`.
+  - **Color Scaling**: Shadows dynamically adjust opacity and strength between `.dark` and root scopes natively inside the tokens file.
+- Premium sans-led typography with strong headline contrast.
 
 ### Public portfolio defaults
 
@@ -217,9 +226,11 @@ Test and design for:
 ### Buttons
 
 - One clear primary CTA per screen
-- Secondary actions visibly subordinate
+- Primary buttons should use the brand gradient (`--ar-gradient-primary`) with a soft glowing shadow (`--ar-shadow-glow-primary`).
+- Secondary actions visibly subordinate, with standard outline or soft background.
 - Disabled state must look disabled and remain non-interactive
 - Loading buttons must show progress and avoid double submit
+- Button border radius is standardized to `12px` or `16px` depending on spacing needs.
 
 ### Cards
 
@@ -230,6 +241,8 @@ Test and design for:
 ### Inputs
 
 - Use semantic types
+- Standardized focus state using `--ar-focus-ring` (`#3B82F6` ring).
+- Input fields use a standard `12px` or `16px` border radius depending on form density.
 - Show helper copy for complex fields
 - Keep labels outside placeholders
 

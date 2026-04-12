@@ -81,12 +81,7 @@ export function LandingPage() {
         {/* Left Side: Value Prop & Actions */}
         <section className="auth-sidebar">
           <header className="landing-header">
-            <div className="brand-row">
-              <div className="brand-icon">
-                <WandIcon />
-              </div>
-              <span className="brand-text">PortfoliAI</span>
-            </div>
+
             
             <h1 className="landing-title">
               Bring your <br />
@@ -129,10 +124,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <footer className="landing-footer">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </footer>
+
         </section>
 
         {/* Right Side: Animated Demo Visual */}

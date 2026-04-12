@@ -23,6 +23,16 @@
   --ar-space-6: 2rem;
 
   --ar-shadow-soft: 0 12px 30px rgba(23, 35, 56, 0.08);
+  --ar-shadow-glow-primary: 0 0 15px rgba(59, 130, 246, 0.4);
+  --ar-shadow-glow-primary-hover: 0 0 20px rgba(139, 92, 246, 0.5);
+
+  --ar-gradient-primary: linear-gradient(to right, #3b82f6, #8b5cf6);
+  --ar-gradient-primary-hover: linear-gradient(to right, #60a5fa, #a78bfa);
+  
+  --ar-focus-ring: 0 0 0 1px #3B82F6;
+  
+  --ar-radius-xl: 24px;
+  --ar-radius-2xl: 32px;
 }
 
 :root.dark {

@@ -22,7 +22,9 @@ export function MarketingShell() {
     <div className="marketing-shell">
       <header className="shell-header">
         <SparklesText text="Animated Resume" sparklesCount={10} className="text-xl" />
-        <nav className="shell-nav">
+        <nav className="shell-nav" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <Link to="#" style={{ textDecoration: 'none', color: 'var(--ar-color-text-secondary)', fontSize: '0.875rem' }}>Privacy Policy</Link>
+          <Link to="#" style={{ textDecoration: 'none', color: 'var(--ar-color-text-secondary)', fontSize: '0.875rem' }}>Terms of Service</Link>
           <button 
             onClick={toggleTheme}
             style={{
