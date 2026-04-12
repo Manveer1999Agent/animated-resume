@@ -18,14 +18,7 @@ type CreateRouterOptions = {
   initialEntries?: string[];
 };
 
-function LandingPage() {
-  return (
-    <section className="panel">
-      <h1>Animated Resume</h1>
-      <p>Build an interactive, recruiter-ready portfolio from your professional data.</p>
-    </section>
-  );
-}
+import { LandingPage } from "../features/landing/pages/LandingPage";
 
 function RequireAuth({ isAuthenticated }: { isAuthenticated: boolean }) {
   if (!isAuthenticated) {
