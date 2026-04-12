@@ -51,6 +51,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@animated-resume/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
       '@animated-resume/ui':
         specifier: workspace:*
         version: link:../../packages/ui

@@ -11,6 +11,7 @@ import { ProductShell } from "./layouts/ProductShell";
 import { SignInPage } from "../features/auth/pages/SignInPage";
 import { SignUpPage } from "../features/auth/pages/SignUpPage";
 import { DashboardPage } from "../features/dashboard/pages/DashboardPage";
+import { createOnboardingRoutes } from "../features/onboarding/routes";
 
 type CreateRouterOptions = {
   isAuthenticated: boolean;
@@ -47,6 +48,7 @@ function buildRoutes(isAuthenticated: boolean): RouteObject[] {
       path: "/app",
       element: <RequireAuth isAuthenticated={isAuthenticated} />,
       children: [
+        createOnboardingRoutes(),
         {
           element: <ProductShell />,
           children: [
@@ -74,7 +76,15 @@ export function createAppRouter(
 
 export function createBrowserAppRouter(): ReturnType<typeof createBrowserRouter> {
   const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter(
-    buildRoutes(false),
+    buildRoutes(resolveBrowserAuthState()),
   );
   return router;
+}
+
+function resolveBrowserAuthState(): boolean {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return window.localStorage.getItem("animated-resume:auth") !== "false";
 }
