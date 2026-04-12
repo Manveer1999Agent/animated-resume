@@ -11,6 +11,7 @@ import { ProductShell } from "./layouts/ProductShell";
 import { SignInPage } from "../features/auth/pages/SignInPage";
 import { SignUpPage } from "../features/auth/pages/SignUpPage";
 import { DashboardPage } from "../features/dashboard/pages/DashboardPage";
+import { createOnboardingRouteGroup } from "../features/onboarding/routes";
 
 type CreateRouterOptions = {
   isAuthenticated: boolean;
@@ -44,14 +45,19 @@ function buildRoutes(isAuthenticated: boolean): RouteObject[] {
       ],
     },
     {
-      path: "/app",
       element: <RequireAuth isAuthenticated={isAuthenticated} />,
       children: [
+        createOnboardingRouteGroup(),
         {
-          element: <ProductShell />,
+          path: "/app",
           children: [
-            { index: true, element: <Navigate to="/app/dashboard" replace /> },
-            { path: "dashboard", element: <DashboardPage /> },
+            {
+              element: <ProductShell />,
+              children: [
+                { index: true, element: <Navigate to="/app/dashboard" replace /> },
+                { path: "dashboard", element: <DashboardPage /> },
+              ],
+            },
           ],
         },
       ],
