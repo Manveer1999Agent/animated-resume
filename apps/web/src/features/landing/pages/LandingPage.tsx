@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 
 // SVG Icons
@@ -74,6 +75,7 @@ const BoltIcon = () => (
 );
 
 export function LandingPage() {
+  const navigate = useNavigate();
   return (
     <div className="landing-page-wrapper">
       <main className="landing-container">
@@ -114,13 +116,13 @@ export function LandingPage() {
 
             <form>
               <input type="email" placeholder="Enter your email" className="email-input" />
-              <button type="button" className="btn-primary">
+              <button type="button" className="btn-primary" onClick={() => navigate('/auth/sign-up')}>
                 Sign Up with Email
               </button>
             </form>
 
             <p className="login-hint">
-              Already have an account? <a href="#">Log in</a>
+              Already have an account? <Link to="/auth/sign-in">Log in</Link>
             </p>
           </div>
 
