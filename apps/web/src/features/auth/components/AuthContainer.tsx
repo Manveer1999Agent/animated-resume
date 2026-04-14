@@ -32,7 +32,7 @@ export function AuthContainer({ initialView = 'login' }: { initialView?: 'login'
       if (signInError) throw signInError;
       
       if (data.user) {
-        navigate('/app/dashboard');
+        navigate('/app/templates');
       }
     } catch (err: any) {
       setError(err.message || 'Failed to sign in');
@@ -93,7 +93,7 @@ export function AuthContainer({ initialView = 'login' }: { initialView?: 'login'
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${window.location.origin}/app/dashboard`,
+          redirectTo: `${window.location.origin}/app/templates`,
         }
       });
       if (error) throw error;

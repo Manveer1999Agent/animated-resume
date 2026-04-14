@@ -14,10 +14,15 @@ body,
 }
 
 body {
-  background: var(--ar-color-bg-page);
+  background:
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.1) 0, transparent 50%),
+    var(--ar-color-bg-page);
   color: var(--ar-color-text-primary);
   font-family: var(--ar-font-family-base);
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-attachment: fixed;
 }
 
 :root:not(.dark) body {

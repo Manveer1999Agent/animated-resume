@@ -11,6 +11,7 @@ import { ProductShell } from "./layouts/ProductShell";
 import { SignInPage } from "../features/auth/pages/SignInPage";
 import { SignUpPage } from "../features/auth/pages/SignUpPage";
 import { DashboardPage } from "../features/dashboard/pages/DashboardPage";
+import { TemplateSelectorPage } from "../features/dashboard/pages/TemplateSelectorPage";
 import { createOnboardingRouteGroup } from "../features/onboarding/routes";
 
 type CreateRouterOptions = {
@@ -45,9 +46,15 @@ function buildRoutes(isAuthenticated: boolean): RouteObject[] {
           path: "/app",
           children: [
             {
+              element: <MarketingShell />,
+              children: [
+                { path: "templates", element: <TemplateSelectorPage /> },
+              ],
+            },
+            {
               element: <ProductShell />,
               children: [
-                { index: true, element: <Navigate to="/app/dashboard" replace /> },
+                { index: true, element: <Navigate to="/app/templates" replace /> },
                 { path: "dashboard", element: <DashboardPage /> },
               ],
             },
@@ -72,8 +79,9 @@ export function createAppRouter(
 }
 
 export function createBrowserAppRouter(): ReturnType<typeof createBrowserRouter> {
+  // Pass true or dynamically check auth here for development
   const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter(
-    buildRoutes(false),
+    buildRoutes(true),
   );
   return router;
 }
